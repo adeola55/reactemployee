@@ -1,7 +1,16 @@
 import React from "react";
+import axios from "axios"
+
+
 class Body extends React.Component{
   state = {
     employeelist: []
+  }
+  componentDidMount = () => {
+    axios.get("https://randomuser.me/api/?results=200&nat=us")
+    .then(response => {
+      console.log(response)
+    })
   }
 render(){
   return (<div>
